@@ -1,58 +1,61 @@
 # Mini Projeto API - Consumo de APIs
-Projeto desenvolvido para a disciplina de Inteligencia Artificial
-Fatec Rio Claro - 2 Semestre - 2025
-## Descricao
 
-Este projeto implementa um servidor de API com FastAPI e um cliente
-Python que consome essa API. O servidor consulta a API publica do
-OpenWeatherMap e retorna informacoes climaticas de qualquer cidade.
+Projeto desenvolvido para a disciplina de Inteligência Artificial da Fatec Rio Claro, 2º Semestre de 2025.
 
-## Estrutura do Projeto
+## Descrição
 
-mini_projeto_api/
-├── README.md  
-├── requirements.txt
-├── .gitignore
-├── server/
-│   ├── app/
-│   │   ├── __init__.py
-│   │   └── main.py
-│   └── .env.example
-└── client/
-    ├── main.py
-    └── .env.example
+Este projeto implementa um servidor de API utilizando FastAPI e um cliente em Python que consome essa API. O servidor disponibiliza um catálogo de filmes com funcionalidades de listagem, busca por nome e filtragem por gênero. O cliente acessa essas funcionalidades via requisições HTTP e exibe os resultados no terminal.
 
-## Como rodar
-### 1. Instalar dependencias
-pip install -r requirements.txt
-### 2. Configurar variaveis de ambiente
-No servidor, copie o arquivo .env.example e renomeie para .env
-Adicione sua chave da API do OpenWeatherMap
-No cliente, copie o arquivo .env.example e renomeie para .env
+## Bibliotecas utilizadas
 
-### 3. Rodar o servidor
-cd server/app
-python main.py
+O projeto utiliza as seguintes bibliotecas externas. FastAPI é o framework utilizado para construir o servidor da API de forma rápida e com tipagem automática. Uvicorn é o servidor ASGI responsável por executar a aplicação FastAPI. Requests é a biblioteca utilizada pelo cliente para realizar as requisições HTTP ao servidor. Python-dotenv é utilizada para carregar variáveis de ambiente a partir do arquivo .env, como a URL base do servidor.
 
-### 4. Rodar o cliente
-cd client
-python main.py
+Para instalar todas as dependências de uma vez, execute o comando abaixo no terminal:
 
-## Endpoints
-GET /status
-Retorna o status do servidor.
-Resposta: {"status": "ok", "versao": "1.0", "mensagem": "Servidor online!"}
+    pip install -r requirements.txt
 
-POST /clima
-Recebe o nome de uma cidade e retorna dados climaticos.
-Corpo: {"cidade": "Rio Claro"}
-Resposta: temperatura, umidade, vento, descricao
+## Estrutura do projeto
+
+O projeto está organizado em duas partes principais. A pasta server contém a lógica da API, com o arquivo main.py onde estão definidas as rotas e o arquivo catalogo.json com os dados dos filmes. A pasta client contém o arquivo main.py responsável por consumir a API e exibir os resultados no terminal.
+
+## Como executar
+
+Para rodar o projeto completo, basta executar o arquivo app.py na raiz do projeto com o comando abaixo. Ele inicializa o servidor automaticamente e em seguida abre o menu do cliente no terminal.
+
+    python app.py
+
+Caso prefira rodar separadamente, abra dois terminais. No primeiro, inicie o servidor com o comando uvicorn server.app.main:app --host localhost --port 8000. No segundo, execute o cliente com python client/main.py.
+
+## Variáveis de ambiente
+
+O cliente utiliza um arquivo .env para configurar a URL base do servidor. Um modelo está disponível no arquivo .env.example dentro da pasta client. Copie esse arquivo, renomeie para .env e ajuste se necessário. Por padrão o valor já está configurado para http://localhost:8000, que funciona para execução local.
+
+## Endpoints disponíveis
+
+O servidor expõe três endpoints. O endpoint GET /filmes retorna todos os filmes do catálogo. O endpoint GET /buscar/{nome} realiza uma busca por nome, aceitando nomes parciais ou aproximados. O endpoint GET /genero/{genero} filtra os filmes pelo gênero informado.
+
+## Demonstração
+
+Ao iniciar o projeto com python app.py, o cliente exibe um menu interativo no terminal com as opções disponíveis para consulta ao catálogo.
+
+![Menu de opções do cliente](assets/1-_opcoes.png)
+
+Ao selecionar a opção 1, o cliente realiza uma requisição GET /filmes ao servidor e exibe todos os filmes cadastrados no catálogo, com título, gênero e nota.
+
+![Listagem completa do catálogo](assets/2_catalogo_de_filme.png)
+
+Ao selecionar a opção 2, o usuário digita o nome ou parte do nome de um filme. O cliente envia uma requisição GET /buscar/{nome} e o servidor retorna os filmes correspondentes, incluindo resultados com nomes aproximados.
+
+![Busca por título](assets/3_escolha_titulo.png)
+
+Ao selecionar a opção 3, o cliente exibe os gêneros disponíveis para escolha. O usuário seleciona um número ou digita o gênero manualmente, e o cliente envia uma requisição GET /genero/{genero} ao servidor.
+
+![Seleção de gênero](assets/4_escolha_genero.png)
+
+Após a seleção do gênero, o servidor retorna os filmes correspondentes e o cliente os exibe formatados no terminal com título, gênero e nota.
+
+![Resultado por gênero](assets/5resultadogenero.png)
 
 ## Integrantes
 
-- Mateo (mateozin) - Servidor backend
-- Vladimir (vladimirsejas) - Cliente, README, configuracao
-
-## Dependencias
-
-fastapi, uvicorn, requests, httpx, python-dotenv, pydantic
+O servidor foi desenvolvido pelo integrante responsável pelo backend, incluindo o arquivo server/app/main.py, o catalogo.json e o app.py. O cliente, o README e as configurações de ambiente foram desenvolvidos pelo segundo integrante, com contribuição via pull request no repositório.

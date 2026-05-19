@@ -1,0 +1,77 @@
+[
+    {
+        "titulo": "Interestelar",
+        "genero": "Ficção Científica",
+        "nota": 9.0
+    },
+    {
+        "titulo": "Batman: O Cavaleiro das Trevas",
+        "genero": "Ação",
+        "nota": 9.5
+    },
+    {
+        "titulo": "Vingadores: Ultimato",
+        "genero": "Ação",
+        "nota": 8.9
+    },
+    {
+        "titulo": "Toy Story",
+        "genero": "Animação",
+        "nota": 8.5
+    },
+    {
+        "titulo": "Clube da Luta",
+        "genero": "Drama",
+        "nota": 8.8
+    },
+    {
+        "titulo": "O Poderoso Chefão",
+        "genero": "Crime",
+        "nota": 9.7
+    },
+    {
+        "titulo": "Homem-Aranha no Aranhaverso",
+        "genero": "Animação",
+        "nota": 8.9
+    },
+    {
+        "titulo": "Top Gun: Maverick",
+        "genero": "Ação",
+        "nota": 8.7
+    },
+    {
+        "titulo": "Avatar",
+        "genero": "Ficção Científica",
+        "nota": 8.2
+    },
+    {
+        "titulo": "Duna",
+        "genero": "Ficção Científica",
+        "nota": 8.6
+    },
+    {
+        "titulo": "Shrek",
+        "genero": "Comédia",
+        "nota": 8.1
+    },
+    {
+        "titulo": "Corra!",
+        "genero": "Terror",
+        "nota": 8.4
+    },
+    {
+        "titulo": "John Wick",
+        "genero": "Ação",
+        "nota": 8.3
+    },
+    {
+        "titulo": "Titanic",
+        "genero": "Romance",
+        "nota": 8.0
+    },
+    {
+        "titulo": "Harry Potter e o Cálice de Fogo",
+        "genero": "Fantasia",
+        "nota": 8.0
+    }
+]
