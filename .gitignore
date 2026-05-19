@@ -1,6 +1,16 @@
+
+venv/
+.venv/
+env/
+
 .env
+
 __pycache__/
 *.py[cod]
-venv/
-.idea/
+
+# IDEs
 .vscode/
+.idea/
+
+# macOS
+.DS_Store
