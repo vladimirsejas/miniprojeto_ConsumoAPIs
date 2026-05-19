@@ -42,15 +42,15 @@ Ao iniciar o projeto com python app.py, o cliente exibe um menu interativo no te
 
 Ao selecionar a opção 1, o cliente realiza uma requisição GET /filmes ao servidor e exibe todos os filmes cadastrados no catálogo, com título, gênero e nota.
 
-![Listagem completa do catálogo](assets/2catalogode_filme.png)
+![Listagem completa do catálogo](assets/2catalogodefilme.png)
 
 Ao selecionar a opção 2, o usuário digita o nome ou parte do nome de um filme. O cliente envia uma requisição GET /buscar/{nome} e o servidor retorna os filmes correspondentes, incluindo resultados com nomes aproximados.
 
-![Busca por título](assets/3_escolhatitulo.png)
+![Busca por título](assets/3escolhatitulo.png)
 
 Ao selecionar a opção 3, o cliente exibe os gêneros disponíveis para escolha. O usuário seleciona um número ou digita o gênero manualmente, e o cliente envia uma requisição GET /genero/{genero} ao servidor.
 
-![Seleção de gênero](assets/4_escolhagenero.png)
+![Seleção de gênero](assets/4escolhagenero.png)
 
 Após a seleção do gênero, o servidor retorna os filmes correspondentes e o cliente os exibe formatados no terminal com título, gênero e nota.
 
